@@ -1,0 +1,4 @@
+*.o
+/surf
+*.so
+/.ccls-cache/
