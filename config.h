@@ -124,6 +124,11 @@ static WebKitFindOptions findopts = WEBKIT_FIND_OPTIONS_CASE_INSENSITIVE |
         } \
 }
 
+#define SETURI(p)       { .v = (char *[]){ "/bin/sh", "-c", \
+"prop=\"`dmenu.uri.sh`\" &&" \
+"xprop -id $1 -f $0 8s -set $0 \"$prop\"", \
+p, winid, NULL } }
+
 /* styles */
 /*
  * The iteration will stop at the first match, beginning at the beginning of
@@ -156,6 +161,7 @@ static Key keys[] = {
 	{ MODKEY,                GDK_KEY_g,      spawn,      SETPROP("_SURF_URI", "_SURF_GO", PROMPT_GO) },
 	{ MODKEY,                GDK_KEY_s,      spawn,      SETPROP("_SURF_FIND", "_SURF_FIND", PROMPT_FIND) },
     { MODKEY,                GDK_KEY_m,      spawn,      BM_ADD("_SURF_URI") },
+    { MODKEY,                GDK_KEY_h,      spawn,      SETURI("_SURF_GO") },
 
 	{ 0,                     GDK_KEY_Escape, stop,       { 0 } },
 	{ MODKEY,                GDK_KEY_c,      stop,       { 0 } },
