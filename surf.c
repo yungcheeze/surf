@@ -229,6 +229,7 @@ static void reload(Client *c, const Arg *a);
 static void print(Client *c, const Arg *a);
 static void showcert(Client *c, const Arg *a);
 static void clipboard(Client *c, const Arg *a);
+static void watch_youtube(Client *c, const Arg *a);
 static void zoom(Client *c, const Arg *a);
 static void scrollv(Client *c, const Arg *a);
 static void scrollh(Client *c, const Arg *a);
@@ -1956,6 +1957,16 @@ clipboard(Client *c, const Arg *a)
 		                       selection), c->targeturi
 		                       ? c->targeturi : geturi(c), -1);
 	}
+}
+
+void
+watch_youtube(Client *c, const Arg *a)
+{
+	Arg arg;
+	char url[1000];
+	sprintf(url, "%s&vq=hd1080", geturi(c));
+	arg = (Arg)VIDEOPLAY(url);
+	spawn(c, &arg);
 }
 
 void

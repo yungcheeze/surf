@@ -163,6 +163,7 @@ static Key keys[] = {
     { MODKEY,                GDK_KEY_m,      spawn,      BM_ADD("_SURF_URI") },
     { MODKEY,                GDK_KEY_h,      spawn,      SETURI("_SURF_GO") },
     { MODKEY,                GDK_KEY_t,      newwindow,       { 0 } },
+    { MODKEY,                GDK_KEY_e,      watch_youtube,  { 0 } },
 
 	{ 0,                     GDK_KEY_Escape, stop,       { 0 } },
 	{ MODKEY,                GDK_KEY_c,      stop,       { 0 } },
