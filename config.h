@@ -4,6 +4,8 @@ static char *fulluseragent  = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.3
 static char *scriptfiles[]  = {
 "~/Software/surf/.surf/script.js"
 };
+static char *dldir          = "~/Downloads/";
+static char *dlstatus       = "~/.surf/dlstatus/";
 static char *styledir       = "~/Software/surf/.surf/styles/";
 static char *certdir        = "~/Software/surf/.surf/certificates/";
 static char *cachedir       = "~/Software/surf/.surf/cache/";
@@ -162,6 +164,9 @@ static Key keys[] = {
     { MODKEY,                GDK_KEY_h,      spawn,      SETURI("_SURF_GO") },
     { MODKEY,                GDK_KEY_t,      newwindow,       { 0 } },
     { MODKEY,                GDK_KEY_e,      watch_youtube,  { 0 } },
+	/* download-console */
+	{ MODKEY,                GDK_KEY_d,      spawndls,   { 0 } },
+
 
 	{ 0,                     GDK_KEY_Escape, stop,       { 0 } },
 	{ MODKEY,                GDK_KEY_c,      stop,       { 0 } },
