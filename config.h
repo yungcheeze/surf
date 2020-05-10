@@ -159,7 +159,7 @@ static SiteSpecific certs[] = {
 static Key keys[] = {
     /* modifier              keyval          function    arg */
 	{ MODKEY,                GDK_KEY_g,      spawn,      SETPROP("_SURF_URI", "_SURF_GO", PROMPT_GO) },
-	{ MODKEY,                GDK_KEY_s,      spawn,      SETPROP("_SURF_FIND", "_SURF_FIND", PROMPT_FIND) },
+	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_s,      spawn,      SETPROP("_SURF_FIND", "_SURF_FIND", PROMPT_FIND) },
     { MODKEY,                GDK_KEY_m,      spawn,      BM_ADD("_SURF_URI") },
     { MODKEY,                GDK_KEY_h,      spawn,      SETURI("_SURF_GO") },
     { MODKEY,                GDK_KEY_t,      newwindow,       { 0 } },
@@ -172,7 +172,6 @@ static Key keys[] = {
 	{ MODKEY,                GDK_KEY_c,      stop,       { 0 } },
 
 	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_r,      reload,     { .i = 1 } },
-	{ MODKEY,                GDK_KEY_r,      reload,     { .i = 0 } },
 
 	{ MODKEY,                GDK_KEY_period,      navigate,   { .i = +1 } },
 	{ MODKEY,                GDK_KEY_comma,      navigate,   { .i = -1 } },
@@ -193,8 +192,8 @@ static Key keys[] = {
 	{ MODKEY,                GDK_KEY_y,      clipboard,  { .i = 1 } },
 	{ MODKEY,                GDK_KEY_w,      clipboard,  { .i = 0 } },
 
-	{ MODKEY,                GDK_KEY_d,      find,       { .i = +1 } },
-	{ MODKEY,                GDK_KEY_u,      find,       { .i = -1 } },
+	{ MODKEY,                GDK_KEY_s,      find,       { .i = +1 } },
+	{ MODKEY,                GDK_KEY_r,      find,       { .i = -1 } },
 
 	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_p,      print,      { 0 } },
 	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_t,      showcert,   { 0 } },
