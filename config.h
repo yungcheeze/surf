@@ -62,12 +62,7 @@ static Parameter defconfig[ParameterLast] = {
 	[ClipboardNotPrimary] =		  { { .i = 1 },	    },
 };
 
-static UriParameters uriparams[] = {
-	/* { "(://|\\.)suckless\\.org(/|$)", { */
-	/*   [JavaScript] = { { .i = 0 }, 1 }, */
-	/*   [Plugins]    = { { .i = 0 }, 1 }, */
-	/* }, }, */
-};
+static UriParameters uriparams[] = {};
 
 /* default window size: width, height */
 static int winsize[] = { 800, 600 };
