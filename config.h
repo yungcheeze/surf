@@ -16,6 +16,7 @@ static char *historyfile    = "~/Software/surf/.surf/history";
 static SearchEngine searchengines[] = {
     { "hg",   "https://hoogle.haskell.org/?hoogle=%s"   },
 	{ "g",   "http://www.google.com/search?q=%s"   },
+    { "s",   "https://www.startpage.com/do/dsearch?query=%s"   },
 	{ "ddg", "https://duckduckgo.com/?q=%s" },
 };
 /* Webkit default features */
