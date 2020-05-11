@@ -1616,6 +1616,7 @@ void
 loadchanged(WebKitWebView *v, WebKitLoadEvent e, Client *c)
 {
 	const char *uri = geturi(c);
+	Arg arg;
 
 	switch (e) {
 	case WEBKIT_LOAD_STARTED:
@@ -1639,6 +1640,8 @@ loadchanged(WebKitWebView *v, WebKitLoadEvent e, Client *c)
 		                                        &c->tlserr);
 		break;
 	case WEBKIT_LOAD_FINISHED:
+		arg = (Arg)ONLOAD(uri);
+		spawn(c, &arg);
 		seturiparameters(c, uri, loadfinished);
 		updatehistory(uri, c->title);
 		/* Disabled until we write some WebKitWebExtension for
