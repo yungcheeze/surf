@@ -30,7 +30,8 @@ geturi() {
 	local -r s="$1"
 	local -r host="$(echo "$s" | sed 's,^\(.*://\|\)\([^/:]*\).*,\2,')"
 	local -r scheme="$(echo "$s" |cut -sd: -f1)"
-	local search uri
+	local -r searchengine="$(echo "$s" |cut -sd' ' -f1)"
+	local search uri searchquery
 	echo "host: $host" >> ~/.surf/geturi.log
 	echo "scheme: $scheme" >> ~/.surf/geturi.log
 	# search only when no scheme or it's http(s)
@@ -41,9 +42,30 @@ geturi() {
 	fi
 	echo "search: $search" >> ~/.surf/geturi.log
 	if [ "$search" -ne 0 ]; then
+		case "$searchengine" in
+			hg)
+				uri="https://hoogle.haskell.org/?hoogle="
+				searchquery="${s:2}"
+				;;
+			g)
+				uri="http://www.google.com/search?q="
+				searchquery="${s:1}"
+				;;
+			s)
+				uri="https://www.startpage.com/do/dsearch?query="
+				searchquery="${s:1}"
+				;;
+			ddg)
+				uri="https://duckduckgo.com/?q=%s"
+				searchquery="${s:3}"
+				;;
+			*)
+				uri="https://www.startpage.com/do/dsearch?query="
+				searchquery="$s"
+				;;
+		esac
 		# enjoy !bangs
-		uri="https://duckduckgo.com/?q="
-		uri+="$(urlencode "$s")"
+		uri+="$(urlencode "$searchquery")"
 	else
 		uri="$s"
 	fi
