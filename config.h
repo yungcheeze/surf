@@ -115,6 +115,16 @@ static WebKitFindOptions findopts = WEBKIT_FIND_OPTIONS_CASE_INSENSITIVE |
         } \
 }
 
+#define BM_GO { \
+        .v = (const char *[]){ "/bin/sh", "-c", \
+             "prop=\"$(printf '%b' \"$(xprop -id $1 $2 " \
+             "| sed \"s/^$2(STRING) = //;s/^\\\"\\(.*\\)\\\"$/\\1/\" && cat ~/.surf/bookmarks)\" " \
+             "| dmenu -l 10 -p \"$4\" -w $1)\" && " \
+             "xprop -id $1 -f $3 8s -set $3 \"$prop\"", \
+             "surf-setprop", winid, "_SURF_URI", "_SURF_GO", PROMPT_GO, NULL \
+        } \
+}
+
 #define SETURI(p)       { .v = (char *[]){ "/bin/sh", "-c", \
 "prop=\"`dmenu.uri.sh`\" &&" \
 "xprop -id $1 -f $0 8s -set $0 \"$prop\"", \
@@ -164,6 +174,7 @@ static Key keys[] = {
 	{ MODKEY,                GDK_KEY_g,      spawn,      GOTO },
 	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_s,      spawn,      SETPROP("_SURF_FIND", "_SURF_FIND", PROMPT_FIND) },
     { MODKEY,                GDK_KEY_m,      spawn,      BM_ADD("_SURF_URI") },
+	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_m,      spawn,      BM_GO },
     { MODKEY,                GDK_KEY_h,      spawn,      SETURI("_SURF_GO") },
     { MODKEY,                GDK_KEY_t,      newwindow,       { 0 } },
     { MODKEY,                GDK_KEY_e,      watch_youtube,  { 0 } },
