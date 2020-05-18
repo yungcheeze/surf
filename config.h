@@ -2,8 +2,8 @@
 static int surfuseragent    = 0;  /* Append Surf version to default WebKit user agent */
 static char *fulluseragent  = ""; /* Or override the whole user agent string */
 static char *scriptfiles[]  = {
-"~/Software/surf/.surf/script.js",
-"~/Software/surf/.surf/linkhint.js"
+"~/Software/surf/.surf/scripts/script.js",
+"~/Software/surf/.surf/scripts/linkhint.js"
 };
 static char *dldir          = "~/Downloads/";
 static char *dlstatus       = "~/.surf/dlstatus/";
