@@ -2,3 +2,8 @@
 /surf
 *.so
 /.ccls-cache/
+/.surf/bookmarks
+/.surf/cache/
+/.surf/cookies.txt
+/.surf/history
+/.surf/onmibar-history
