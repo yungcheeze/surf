@@ -75,7 +75,7 @@ goto() {
 	local -r prop="$2"
 	local uri s
 
-	s="$(cat "$HISTFN" |sort -rn | cut -d' ' -f2- | dmenu -i -l "$NITEMS")"
+	s="$(cat "$HISTFN" |sort -rn | cut -d' ' -f2- | dmenu -i -l "$NITEMS" -w "$xid")"
 	s="$(trim "$s")"
 	[ -z "$s" ] && return
 
