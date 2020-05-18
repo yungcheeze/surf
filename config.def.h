@@ -125,13 +125,13 @@ p, winid, NULL } }
 
 #define ONLOAD(u) { \
 	.v = (char *[]){"/bin/sh", "-c", \
-		"~/.surf/omnibar addhist \"$0\"", u, NULL \
+		"~/.surf/shell/omnibar addhist \"$0\"", u, NULL \
 	} \
 }
 
 #define GOTO { \
 	.v = (char *[]){"/bin/sh", "-c", \
-		"~/.surf/omnibar goto \"$0\" \"$1\"", winid, "_SURF_GO", NULL \
+		"~/.surf/shell/omnibar goto \"$0\" \"$1\"", winid, "_SURF_GO", NULL \
 	} \
 }
 
