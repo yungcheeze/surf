@@ -720,11 +720,11 @@ updatetitle(Client *c)
 		getpagestats(c);
 
 		if (c->progress != 100)
-			title = g_strdup_printf("[%i%%] surf | %s",
-			        c->progress, name);
+			title = g_strdup_printf("[%i%%] %s:%s | %s",
+			        c->progress, togglestats, pagestats, name);
 		else
-			title = g_strdup_printf("surf | %s",
-			        name);
+			title = g_strdup_printf("%s:%s | %s",
+			        togglestats, pagestats, name);
 
 		gtk_window_set_title(GTK_WINDOW(c->win), title);
 		g_free(title);
