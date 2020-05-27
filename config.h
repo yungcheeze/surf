@@ -171,6 +171,7 @@ static SiteSpecific certs[] = {
 static Key keys[] = {
     /* modifier              keyval          function    arg */
 	{ MODKEY,                GDK_KEY_g,      spawn,      GOTO },
+	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_g,      spawn,      SETPROP("_SURF_URI", "_SURF_GO", PROMPT_GO) },
 	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_s,      spawn,      SETPROP("_SURF_FIND", "_SURF_FIND", PROMPT_FIND) },
     { MODKEY,                GDK_KEY_m,      spawn,      BM_ADD("_SURF_URI") },
 	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_m,      spawn,      BM_GO },
