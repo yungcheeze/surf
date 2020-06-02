@@ -54,7 +54,7 @@ geturi() {
 				searchquery="${s:1}"
 				;;
 			ddg)
-				uri="https://duckduckgo.com/?q=%s"
+				uri="https://duckduckgo.com/?q="
 				searchquery="${s:3}"
 				;;
 			*)
