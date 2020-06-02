@@ -33,10 +33,10 @@ geturi() {
 	local -r searchengine="$(echo "$s" |cut -sd' ' -f1)"
 	local search uri searchquery
 	# search only when no scheme or it's http(s)
-	if [ -z "$scheme" -o  "$scheme" = "http" -o "$scheme" = "https" ]; then
-		search="$(nc --zero --wait 1 "$host" 80 2> /dev/null; echo $?)"
-	else
+	if [ "$scheme" = "http" -o "$scheme" = "https" ]; then
 		search=0
+	else
+		search="$(nc --zero --wait 1 "$host" 80 2> /dev/null; echo $?)"
 	fi
 
 	if [ "$search" -ne 0 ]; then
