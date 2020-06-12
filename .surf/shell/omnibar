@@ -50,7 +50,7 @@ geturi() {
 				searchquery="${s:1}"
 				;;
 			s)
-				uri="https://www.startpage.com/do/dsearch?query="
+				uri="https://startpage.com/do/dsearch?query="
 				searchquery="${s:1}"
 				;;
 			ddg)
@@ -58,7 +58,7 @@ geturi() {
 				searchquery="${s:3}"
 				;;
 			*)
-				uri="https://www.startpage.com/do/dsearch?query="
+				uri="https://startpage.com/do/dsearch?query="
 				searchquery="$s"
 				;;
 		esac
