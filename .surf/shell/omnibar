@@ -73,9 +73,11 @@ geturi() {
 goto() {
 	local -r xid="$1"
 	local -r prop="$2"
-	local uri s
+	local uri s surf_uri
 
-	s="$(cat "$HISTFN" |sort -rn | cut -d' ' -f2- | dmenu -i -l "$NITEMS" -w "$xid")"
+	surf_uri="$(xprop -id $xid _SURF_URI | sed 's/^_SURF_URI(STRING) = //;s/"//g')"
+	surf_uri="1000000 $surf_uri"
+	s="$(echo "$surf_uri" | cat - "$HISTFN" |sort -rn | cut -d' ' -f2- | dmenu -i -l "$NITEMS" -w "$xid")"
 	s="$(trim "$s")"
 	[ -z "$s" ] && return
 
