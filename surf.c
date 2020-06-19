@@ -33,7 +33,7 @@
 #include "common.h"
 
 #define LENGTH(x)               (sizeof(x) / sizeof(x[0]))
-#define CLEANMASK(mask)         (mask & (MODKEY|GDK_SHIFT_MASK))
+#define CLEANMASK(mask)         (mask & (MODKEY|GDK_SHIFT_MASK|ALTKEY))
 
 enum { AtomFind, AtomGo, AtomUri, AtomLast };
 
