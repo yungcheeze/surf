@@ -4,7 +4,6 @@ static char *fulluseragent  = ""; /* Or override the whole user agent string */
 static char *scriptfiles[]  = {
 "~/Software/surf/.surf/scripts/script.js",
 "~/Software/surf/.surf/scripts/linkhint.js",
-"~/Software/surf/.surf/scripts/bindings.js"
 };
 static char *dldir          = "~/Downloads/";
 static char *dlstatus       = "~/.surf/dlstatus/";
