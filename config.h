@@ -171,10 +171,11 @@ static SiteSpecific certs[] = {
 static Key keys[] = {
     /* modifier              keyval          function    arg */
 	{ MODKEY,                GDK_KEY_g,      spawn,      GOTO },
-	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_g,      spawn,      SETPROP("_SURF_URI", "_SURF_GO", PROMPT_GO) },
+	{ ALTKEY, GDK_KEY_g,      spawn,      SETPROP("_SURF_URI", "_SURF_GO", PROMPT_GO) },
+	{ ALTKEY, GDK_KEY_s,      spawn,      SETPROP("_SURF_FIND", "_SURF_FIND", PROMPT_FIND) },
 	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_s,      spawn,      SETPROP("_SURF_FIND", "_SURF_FIND", PROMPT_FIND) },
     { MODKEY,                GDK_KEY_m,      spawn,      BM_ADD("_SURF_URI") },
-	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_m,      spawn,      BM_GO },
+	{ ALTKEY, GDK_KEY_m,      spawn,      BM_GO },
     { MODKEY,                GDK_KEY_h,      spawn,      SETURI("_SURF_GO") },
     { MODKEY,                GDK_KEY_t,      newwindow,       { 0 } },
     { MODKEY,                GDK_KEY_e,      watch_youtube,  { 0 } },
@@ -194,7 +195,7 @@ static Key keys[] = {
 	{ MODKEY,                GDK_KEY_n,      scrollv,    { .i = +10 } },
 	{ MODKEY,                GDK_KEY_p,      scrollv,    { .i = -10 } },
 	{ MODKEY,                GDK_KEY_v,      scrollv,    { .i = +50 } },
-	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_v,      scrollv,    { .i = -50 } },
+	{ ALTKEY,                GDK_KEY_v,      scrollv,    { .i = -50 } },
 	{ MODKEY,                GDK_KEY_f,      scrollh,    { .i = +10 } },
 	{ MODKEY,                GDK_KEY_b,      scrollh,    { .i = -10 } },
 
