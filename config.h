@@ -169,56 +169,54 @@ static SiteSpecific certs[] = {
  * edit the CLEANMASK() macro.
  */
 static Key keys[] = {
-    /* modifier              keyval          function    arg */
-	{ MODKEY,                GDK_KEY_g,      spawn,      GOTO },
-	{ ALTKEY, GDK_KEY_g,      spawn,      SETPROP("_SURF_URI", "_SURF_GO", PROMPT_GO) },
-	{ ALTKEY, GDK_KEY_s,      spawn,      SETPROP("_SURF_FIND", "_SURF_FIND", PROMPT_FIND) },
-	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_s,      spawn,      SETPROP("_SURF_FIND", "_SURF_FIND", PROMPT_FIND) },
-    { MODKEY,                GDK_KEY_m,      spawn,      BM_ADD("_SURF_URI") },
-	{ ALTKEY, GDK_KEY_m,      spawn,      BM_GO },
-    { MODKEY,                GDK_KEY_h,      spawn,      SETURI("_SURF_GO") },
-    { MODKEY,                GDK_KEY_t,      newwindow,       { 0 } },
-    { MODKEY,                GDK_KEY_e,      watch_youtube,  { 0 } },
-	/* download-console */
-	{ MODKEY,                GDK_KEY_d,      spawndls,   { 0 } },
+        /* modifier               keyval           function            arg */
+	{ MODKEY,                GDK_KEY_g,       spawn,              GOTO },
+	{ ALTKEY,                GDK_KEY_g,       spawn,              SETPROP("_SURF_URI", "_SURF_GO", PROMPT_GO) },
+	{ ALTKEY,                GDK_KEY_s,       spawn,              SETPROP("_SURF_FIND", "_SURF_FIND", PROMPT_FIND) },
+	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_s,       spawn,              SETPROP("_SURF_FIND", "_SURF_FIND", PROMPT_FIND) },
+	{ MODKEY,                GDK_KEY_m,       spawn,              BM_ADD("_SURF_URI") },
+	{ ALTKEY,                GDK_KEY_m,       spawn,              BM_GO },
+	{ MODKEY,                GDK_KEY_h,       spawn,              SETURI("_SURF_GO") },
+	{ MODKEY,                GDK_KEY_t,       newwindow,          { 0 } },
+	{ MODKEY,                GDK_KEY_e,       watch_youtube,      { 0 } },
+	{ MODKEY,                GDK_KEY_d,       spawndls,           { 0 } },
 
 
-	{ 0,                     GDK_KEY_Escape, stop,       { 0 } },
-	{ MODKEY,                GDK_KEY_c,      stop,       { 0 } },
+	{ 0,                     GDK_KEY_Escape,  stop,               { 0 } },
+	{ MODKEY,                GDK_KEY_c,       stop,               { 0 } },
 
-	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_r,      reload,     { .i = 1 } },
+	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_r,       reload,             { .i = 1 } },
 
-	{ MODKEY,                GDK_KEY_period,      navigate,   { .i = +1 } },
-	{ MODKEY,                GDK_KEY_comma,      navigate,   { .i = -1 } },
+	{ MODKEY,                GDK_KEY_period,  navigate,           { .i = +1 } },
+	{ MODKEY,                GDK_KEY_comma,   navigate,           { .i = -1 } },
 
-	/* vertical and horizontal scrolling, in viewport percentage */
-	{ MODKEY,                GDK_KEY_n,      scrollv,    { .i = +10 } },
-	{ MODKEY,                GDK_KEY_p,      scrollv,    { .i = -10 } },
-	{ MODKEY,                GDK_KEY_v,      scrollv,    { .i = +50 } },
-	{ ALTKEY,                GDK_KEY_v,      scrollv,    { .i = -50 } },
-	{ ALTKEY|GDK_SHIFT_MASK, GDK_KEY_less,      scrollend,    { .i = -100 } },
-	{ ALTKEY|GDK_SHIFT_MASK, GDK_KEY_greater,      scrollend,    { .i = +100 } },
-	{ MODKEY,                GDK_KEY_f,      scrollh,    { .i = +10 } },
-	{ MODKEY,                GDK_KEY_b,      scrollh,    { .i = -10 } },
+	{ MODKEY,                GDK_KEY_n,       scrollv,            { .i = +10 } },
+	{ MODKEY,                GDK_KEY_p,       scrollv,            { .i = -10 } },
+	{ MODKEY,                GDK_KEY_v,       scrollv,            { .i = +50 } },
+	{ ALTKEY,                GDK_KEY_v,       scrollv,            { .i = -50 } },
+	{ ALTKEY|GDK_SHIFT_MASK, GDK_KEY_less,    scrollend,          { .i = -100 } },
+	{ ALTKEY|GDK_SHIFT_MASK, GDK_KEY_greater, scrollend,          { .i = +100 } },
+	{ MODKEY,                GDK_KEY_f,       scrollh,            { .i = +10 } },
+	{ MODKEY,                GDK_KEY_b,       scrollh,            { .i = -10 } },
 
 
-	{ MODKEY,                GDK_KEY_minus,  zoom,       { .i = -1 } },
-	{ MODKEY,                GDK_KEY_equal,  zoom,       { .i = +1 } },
-	{ MODKEY,                GDK_KEY_0,      zoom,       { .i = 0  } },
+	{ MODKEY,                GDK_KEY_minus,   zoom,               { .i = -1 } },
+	{ MODKEY,                GDK_KEY_equal,   zoom,               { .i = +1 } },
+	{ MODKEY,                GDK_KEY_0,       zoom,               { .i = 0  } },
 
-	{ MODKEY,                GDK_KEY_y,      clipboard,  { .i = 1 } },
-	{ MODKEY,                GDK_KEY_w,      clipboard,  { .i = 0 } },
+	{ MODKEY,                GDK_KEY_y,       clipboard,          { .i = 1 } },
+	{ MODKEY,                GDK_KEY_w,       clipboard,          { .i = 0 } },
 
-	{ MODKEY,                GDK_KEY_s,      find,       { .i = +1 } },
-	{ MODKEY,                GDK_KEY_r,      find,       { .i = -1 } },
+	{ MODKEY,                GDK_KEY_s,       find,               { .i = +1 } },
+	{ MODKEY,                GDK_KEY_r,       find,               { .i = -1 } },
 
-	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_p,      print,      { 0 } },
-	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_t,      showcert,   { 0 } },
+	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_p,       print,              { 0 } },
+	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_t,       showcert,           { 0 } },
 
-	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_a,      togglecookiepolicy, { 0 } },
-	{ 0,                     GDK_KEY_F11,    togglefullscreen, { 0 } },
-	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_o,      toggleinspector, { 0 } },
-	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_i,      toggle,     { .i = StrictTLS } },
+	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_a,       togglecookiepolicy, { 0 } },
+	{ 0,                     GDK_KEY_F11,     togglefullscreen,   { 0 } },
+	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_o,       toggleinspector,    { 0 } },
+	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_i,       toggle,             { .i = StrictTLS } },
 };
 
 /* button definitions */
