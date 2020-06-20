@@ -223,6 +223,7 @@ static void watch_youtube(Client *c, const Arg *a);
 static void zoom(Client *c, const Arg *a);
 static void scrollv(Client *c, const Arg *a);
 static void scrollh(Client *c, const Arg *a);
+static void scrollend(Client *c, const Arg *a);
 static void navigate(Client *c, const Arg *a);
 static void stop(Client *c, const Arg *a);
 static void toggle(Client *c, const Arg *a);
@@ -1974,6 +1975,13 @@ void
 scrollh(Client *c, const Arg *a)
 {
 	msgext(c, 'h', a);
+}
+
+scrollend(Client *c, const Arg *a){
+	int i;
+	for (i=0; i < 1000; i++){
+		scrollv(c, a);
+	}
 }
 
 void
