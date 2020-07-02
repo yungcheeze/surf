@@ -1,6 +1,6 @@
 #!/bin/bash
 
-declare -g HISTFN=~/.surf/onmibar-history
+declare -g HISTFN=~/.surf/omnibar-history
 declare -g NITEMS=5
 
 urlencode() {
