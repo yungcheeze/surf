@@ -1,6 +1,6 @@
 /* modifier 0 means no modifier */
 static int surfuseragent    = 0;  /* Append Surf version to default WebKit user agent */
-static char *fulluseragent  = ""; /* Or override the whole user agent string */
+static char *fulluseragent  = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246"; /* Or override the whole user agent string */
 static char *scriptfiles[]  = {
 "~/Software/surf/.surf/scripts/script.js",
 "~/Software/surf/.surf/scripts/linkhint.js",
