@@ -219,6 +219,9 @@ static void reload(Client *c, const Arg *a);
 static void print(Client *c, const Arg *a);
 static void showcert(Client *c, const Arg *a);
 static void clipboard(Client *c, const Arg *a);
+static void clipboard_copy(Client *c, const Arg *a);
+static void clipboard_cut(Client *c, const Arg *a);
+static void clipboard_paste(Client *c, const Arg *a);
 static void watch_youtube(Client *c, const Arg *a);
 static void zoom(Client *c, const Arg *a);
 static void scrollv(Client *c, const Arg *a);
@@ -1227,6 +1230,7 @@ newview(Client *c, WebKitWebView *rv)
 /* For more interesting settings, have a look at
  * http://webkitgtk.org/reference/webkit2gtk/stable/WebKitSettings.html */
 
+
 		if (strcmp(fulluseragent, "")) {
 			webkit_settings_set_user_agent(settings, fulluseragent);
 		} else if (surfuseragent) {
@@ -1921,6 +1925,21 @@ clipboard(Client *c, const Arg *a)
 		                       selection), c->targeturi
 		                       ? c->targeturi : geturi(c), -1);
 	}
+}
+
+void
+clipboard_copy(Client *c, const Arg *a) {
+  webkit_web_view_execute_editing_command(c->view, WEBKIT_EDITING_COMMAND_COPY);
+}
+
+void
+clipboard_cut(Client *c, const Arg *a) {
+  webkit_web_view_execute_editing_command(c->view, WEBKIT_EDITING_COMMAND_CUT);
+}
+
+void
+clipboard_paste(Client *c, const Arg *a) {
+  webkit_web_view_execute_editing_command(c->view, WEBKIT_EDITING_COMMAND_PASTE);
 }
 
 void

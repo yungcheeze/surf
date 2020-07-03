@@ -204,8 +204,11 @@ static Key keys[] = {
 	{ MODKEY,                GDK_KEY_equal,   zoom,               { .i = +1 } },
 	{ MODKEY,                GDK_KEY_0,       zoom,               { .i = 0  } },
 
-	{ MODKEY,                GDK_KEY_y,       clipboard,          { .i = 1 } },
-	{ MODKEY,                GDK_KEY_w,       clipboard,          { .i = 0 } },
+	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_y,       clipboard,          { .i = 1 } },
+	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_w,       clipboard,          { .i = 0 } },
+	{ ALTKEY,                GDK_KEY_w,       clipboard_copy,          { 0 } },
+	{ MODKEY,                GDK_KEY_w,       clipboard_cut,           { 0 } },
+	{ MODKEY,                GDK_KEY_y,       clipboard_paste,         { 0 } },
 
 	{ MODKEY,                GDK_KEY_s,       find,               { .i = +1 } },
 	{ MODKEY,                GDK_KEY_r,       find,               { .i = -1 } },
